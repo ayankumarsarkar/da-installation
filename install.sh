@@ -47,10 +47,10 @@ echo "Installing Bluefish..."
 sudo apt install bluefish
 
 
-git clone https://github.com/javalsai/lidm.git
+sudo git clone https://github.com/javalsai/lidm.git
 cd lidm
-make # 👍
-make install
+sudo make # 👍
+sudo make install
 cd ..
 
 sudo apt install ~/Inbox/lidm
