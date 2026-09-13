@@ -1,7 +1,7 @@
 # if sudo is not installed
 # apt install sudo
 #sudo apt install seatd
-sudo apt wget
+sudo apt install wget
 # use this if usermod did not work
 # /usr/shin/usermod -aG user $user
 
