@@ -2,7 +2,7 @@
 # apt install sudo
 #sudo apt install seatd
 echo "Installing wget, gcc, and make temporarily..."
-sudo apt install wget gcc make
+sudo apt install wget gcc make libpam0g-dev
 # use this if usermod did not work
 # /usr/shin/usermod -aG user $user
 
@@ -65,5 +65,6 @@ echo "Copying Waybar configs..."
 cp -r waybar ~/.config/waybar
 
 echo "Removing installation prerequisites..."
-sudo apt remove wget gcc make
+sudo apt remove wget gcc make libpam0g-dev
+echo "Removing eccess fat..."
 sudo apt autoremove
