@@ -6,7 +6,7 @@ if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
     echo "Exiting..."
     exit 0
 fi
-
+unset confirm
 echo "Starting..."
 
 # if sudo is not installed
@@ -20,9 +20,9 @@ if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
     echo "Exiting..."
     exit 0
 fi
-
+unset confirm
 echo "Installing wget, gcc, and make temporarily..."
-sudo apt install wget gcc make libpam0g-dev
+sudo apt install wget gcc make libpam0g-dev xorg
 
 # ask for $user if none found
 
@@ -30,11 +30,6 @@ sudo apt install wget gcc make libpam0g-dev
 
 # create default folders
 mkdir ~/.config/
-mkdir ~/.config/sway/
-mkdir ~/.config/falkon
-mkdir ~/.config/bluefish
-mkdir ~/.config/rofi-wayland
-mkdir ~/.config/waybar
 mkdir ~/Desktop/
 mkdir ~/Documents/
 mkdir ~/Inbox/
@@ -43,27 +38,39 @@ mkdir ~/Templates/
 mkdir ~/Videos/
 
 # install software
-echo "Installing Sway..."
-sudo apt install sway
+#echo "Installing Sway..."
+#sudo apt install sway
+#mkdir ~/.config/sway/
+echo "Installing i3..."
+sudo apt install i3
+mkdir ~/.config/i3/
 
-echo "Installing Waybar..."
-sudo apt install waybar
+#echo "Installing Waybar..."
+#sudo apt install waybar
+#mkdir ~/.config/waybar
+echo "Installing Polybar..."
+sudo apt install polybar
+mkdir ~/.config/polybar
 
-echo "Instaaling Rofi..."
+echo "Installing Rofi..."
 sudo apt install rofi
+mkdir ~/.config/rofi
 
 echo "Installing Alacritty..."
 sudo apt install alacritty
 
-echo "Installing PCManFM-qt..."
-sudo apt install pcmanfm-qt
+#echo "Installing PCManFM-qt..."
+#sudo apt install pcmanfm-qt
+echo "Installing PCManFM..."
+sudo apt install pcmanfm
 
 echo "Installing Falkon..."
 sudo apt install falkon
+mkdir ~/.config/falkon
 
 echo "Installing Bluefish..."
 sudo apt install bluefish
-
+mkdir ~/.config/bluefish
 
 sudo git clone https://github.com/javalsai/lidm.git
 cd lidm
@@ -77,13 +84,20 @@ sudo systemctl enable lidm
 #wget <link to Koofr>
 
 # Copy configs
-echo "Copying Sway configs..."
-cp config.sway ~/.config/sway/config
+echo "Copying X11 configs..."
+cp config.xorg ~/.xinitrc
 
-echo "Copying Waybar configs..."
-cp -r waybar ~/.config/waybar
+echo "Copying Sway configs..."
+cp config.sway ~/.config/i3/config
+
+#echo "Copying Waybar configs..."
+#cp -r waybar ~/.config/waybar
+git clone https://github.com/prcxzm/polybar-themes
+cp -r polybar-themes/simple ~/.config/polybar
 
 echo "Removing installation prerequisites..."
 sudo apt remove wget gcc make libpam0g-dev
 echo "Removing eccess fat..."
 sudo apt autoremove
+
+echo "Reboot required..."
