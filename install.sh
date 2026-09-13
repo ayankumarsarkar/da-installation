@@ -49,7 +49,7 @@ sudo apt install bluefish
 
 sudo git clone https://github.com/javalsai/lidm.git
 cd lidm
-sudo make # 👍
+sudo make CFLAGS="-D_GNU_SOURCE" CXXFLAGS="-D_GNU_SOURCE" # 👍
 sudo make install
 cd ..
 
