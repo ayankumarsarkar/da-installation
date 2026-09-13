@@ -17,12 +17,17 @@ set $left h
 set $down j
 set $up k
 set $right l
+
+# Your preferred application launcher
+set $menu rofi
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred file manager
 set $fm pcmanfm-qt
-# Your preferred application launcher
-set $menu rofi-wayland
+# Your preferred web browser
+set $browser falkon
+# Your preferred email client
+set $email tuta
 
 include /etc/sway/config-vars.d/*
 
@@ -71,17 +76,24 @@ include /etc/sway/config-vars.d/*
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
-    # Start a file manager
-    bindsym $mod+shift+Return exec $fm
-
-    # Kill focused window
-    bindsym $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Start a terminal
+    bindsym $mod+c+Return exec $term
+
+    # Start a file manager
+    bindsym $mod+f+Return exec $fm
+
+    # Start a web browser
+    bindsym $mod+w+Return exec $browser
+
+    # Start an email client
+    bindsym $mod+e+Return exec $email
+
+    # Kill focused window
+    bindsym $mod+q+Return kill
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
