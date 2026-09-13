@@ -19,8 +19,10 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term alacritty
+# Your preferred file manager
+set $fm pcmanfm-qt
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu rofi-wayland
 
 include /etc/sway/config-vars.d/*
 
@@ -71,6 +73,9 @@ include /etc/sway/config-vars.d/*
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+
+    # Start a file manager
+    bindsym $mod+shift+Return exec $fm
 
     # Kill focused window
     bindsym $mod+Shift+q kill

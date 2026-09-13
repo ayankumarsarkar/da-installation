@@ -1,6 +1,7 @@
 # if sudo is not installed
 # apt install sudo
-
+#sudo apt install seatd
+sudo apt wget
 # use this if usermod did not work
 # /usr/shin/usermod -aG user $user
 
@@ -22,13 +23,13 @@ mkdir ~/Pictures/
 mkdir ~/Templates/
 mkdir ~/Videos/
 
-# Copy configs
-cp config.sway ~/.config/sway/config
-
 # install software
-#sudo apt install sway waybar rofi-wayland alacritty pcmanfm-qt falkon bluefish
+sudo apt install sway waybar alacritty pcmanfm-qt falkon bluefish
 
+wget https://github.com/javalsai/lidm/releases/download/v2.0.2/lidm-amd64 ~/Inbox/lidm
+sudo apt install ~/Inbox/lidm
 #wget <link to TutaMail> 
 #wget <link to Koofr>
 
-
+# Copy configs
+cp config.sway ~/.config/sway/config
