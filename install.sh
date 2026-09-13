@@ -53,8 +53,8 @@ sudo make CFLAGS="-D_GNU_SOURCE" CXXFLAGS="-D_GNU_SOURCE" # 👍
 sudo make install
 sudo make install-service-systemd
 cd ..
+sudo systemctl enable lidm
 
-sudo apt install ~/Inbox/lidm
 #wget <link to TutaMail> 
 #wget <link to Koofr>
 
