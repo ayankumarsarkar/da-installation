@@ -1,10 +1,10 @@
 # if sudo is not installed
-# apt install sudo
-#sudo apt install seatd
+# sudo apt install sudo
+# use this if usermod did not work
+/usr/shin/usermod -aG $user,input,video,plugdev $user
+
 echo "Installing wget, gcc, and make temporarily..."
 sudo apt install wget gcc make libpam0g-dev
-# use this if usermod did not work
-# /usr/shin/usermod -aG user $user
 
 # ask for $user if none found
 
