@@ -1,7 +1,7 @@
 # if sudo is not installed
 # apt install sudo
 #sudo apt install seatd
-sudo apt install wget
+sudo apt install wget gcc make
 # use this if usermod did not work
 # /usr/shin/usermod -aG user $user
 
@@ -32,10 +32,17 @@ sudo apt install pcmanfm-qt
 sudo apt install falkon
 sudo apt install bluefish
 
-wget https://github.com/javalsai/lidm/releases/download/v2.0.2/lidm-amd64 ~/Inbox/lidm
+git clone https://github.com/javalsai/lidm.git
+cd lidm
+make # 👍
+
 sudo apt install ~/Inbox/lidm
 #wget <link to TutaMail> 
 #wget <link to Koofr>
 
 # Copy configs
 cp config.sway ~/.config/sway/config
+cp -r waybar ~/.config/waybar
+
+sudo apt remove wget gcc make
+sudo apt autoremove
