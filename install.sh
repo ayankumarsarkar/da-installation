@@ -26,11 +26,11 @@ mkdir ~/Videos/
 # install software
 sudo apt install sway
 sudo apt install waybar
-sudo apt rofi
-sudo apt alacritty
-sudo apt pcmanfm-qt
-sudo apt falkon
-sudo apt bluefish
+sudo apt install rofi
+sudo apt install alacritty
+sudo apt install pcmanfm-qt
+sudo apt install falkon
+sudo apt install bluefish
 
 wget https://github.com/javalsai/lidm/releases/download/v2.0.2/lidm-amd64 ~/Inbox/lidm
 sudo apt install ~/Inbox/lidm
