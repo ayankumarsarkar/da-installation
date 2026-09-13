@@ -22,6 +22,9 @@ mkdir ~/Pictures/
 mkdir ~/Templates/
 mkdir ~/Videos/
 
+# Copy configs
+cp config.sway ~/.config/sway/config
+
 # install software
 #sudo apt install sway waybar rofi-wayland alacritty pcmanfm-qt falkon bluefish
 

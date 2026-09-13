@@ -6,10 +6,10 @@
 
 xwayland disable
 
-output WL-1 resolution 960x600
+# output WL-1 resolution 960x600
 
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 # Home row direction keys, like vim
@@ -18,7 +18,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty
 # Your preferred application launcher
 set $menu wmenu-run
 
