@@ -51,6 +51,7 @@ sudo git clone https://github.com/javalsai/lidm.git
 cd lidm
 sudo make CFLAGS="-D_GNU_SOURCE" CXXFLAGS="-D_GNU_SOURCE" # 👍
 sudo make install
+sudo make install-service-systemd
 cd ..
 
 sudo apt install ~/Inbox/lidm
