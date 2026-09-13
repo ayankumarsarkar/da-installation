@@ -1,7 +1,7 @@
 # if sudo is not installed
 # sudo apt install sudo
 # use this if usermod did not work
-sudo usermod -aG $user,input,video,plugdev $user
+sudo usermod -aG input,video,plugdev $user
 
 echo "Installing wget, gcc, and make temporarily..."
 sudo apt install wget gcc make libpam0g-dev
