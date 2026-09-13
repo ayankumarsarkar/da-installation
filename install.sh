@@ -1,6 +1,7 @@
 # if sudo is not installed
 # apt install sudo
 #sudo apt install seatd
+echo "Installing wget, gcc, and make temporarily..."
 sudo apt install wget gcc make
 # use this if usermod did not work
 # /usr/shin/usermod -aG user $user
@@ -24,13 +25,27 @@ mkdir ~/Templates/
 mkdir ~/Videos/
 
 # install software
+echo "Installing Sway..."
 sudo apt install sway
+
+echo "Installing Waybar..."
 sudo apt install waybar
+
+echo "Instaaling Rofi..."
 sudo apt install rofi
+
+echo "Installing Alacritty..."
 sudo apt install alacritty
+
+echo "Installing PCManFM-qt..."
 sudo apt install pcmanfm-qt
+
+echo "Installing Falkon..."
 sudo apt install falkon
+
+echo "Installing Bluefish..."
 sudo apt install bluefish
+
 
 git clone https://github.com/javalsai/lidm.git
 cd lidm
@@ -43,8 +58,12 @@ sudo apt install ~/Inbox/lidm
 #wget <link to Koofr>
 
 # Copy configs
+echo "Copying Sway configs..."
 cp config.sway ~/.config/sway/config
+
+echo "Copying Waybar configs..."
 cp -r waybar ~/.config/waybar
 
+echo "Removing installation prerequisites..."
 sudo apt remove wget gcc make
 sudo apt autoremove
