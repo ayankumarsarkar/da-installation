@@ -35,6 +35,8 @@ sudo apt install bluefish
 git clone https://github.com/javalsai/lidm.git
 cd lidm
 make # 👍
+make install
+cd ..
 
 sudo apt install ~/Inbox/lidm
 #wget <link to TutaMail> 
