@@ -24,7 +24,13 @@ mkdir ~/Templates/
 mkdir ~/Videos/
 
 # install software
-sudo apt install sway waybar rofi alacritty pcmanfm-qt falkon bluefish
+sudo apt install sway
+sudo apt install waybar
+sudo apt rofi
+sudo apt alacritty
+sudo apt pcmanfm-qt
+sudo apt falkon
+sudo apt bluefish
 
 wget https://github.com/javalsai/lidm/releases/download/v2.0.2/lidm-amd64 ~/Inbox/lidm
 sudo apt install ~/Inbox/lidm
