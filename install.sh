@@ -23,7 +23,7 @@ mkdir ~/Templates/
 mkdir ~/Videos/
 
 # install software
-sudo apt install sway waybar rofi-wayland alacritty pcmanfm-qt falkon bluefish
+#sudo apt install sway waybar rofi-wayland alacritty pcmanfm-qt falkon bluefish
 
 #wget <link to TutaMail> 
 #wget <link to Koofr>
