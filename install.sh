@@ -12,7 +12,7 @@ echo "Starting..."
 # if sudo is not installed
 # sudo apt install sudo
 # use this if usermod did not work
-sudo usermod -aG input,video,plugdev $user
+sudo usermod -aG input,video,plugdev $USER
 
 read -p "Do you want install anything? (y/n): " confirm
 
