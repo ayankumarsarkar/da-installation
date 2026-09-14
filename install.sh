@@ -29,13 +29,15 @@ sudo apt install wget gcc make libpam0g-dev xorg
 # switch to user space
 
 # create default folders
-mkdir ~/.config/
-mkdir ~/Desktop/
-mkdir ~/Documents/
-mkdir ~/Inbox/
-mkdir ~/Pictures/
-mkdir ~/Templates/
-mkdir ~/Videos/
+mkdir $HOME/.config/ # Soon $HOME/System
+mkdir $HOME/Desktop/
+mkdir $HOME/Documents/
+mkdir $HOME/Inbox/
+mkdir $HOME/Pictures/
+mkdir $HOME/Templates/
+mkdir $HOME/Videos/
+
+mv ~/.bashrc ~/.config/Bash/bashrc
 
 # install software
 #echo "Installing Sway..."
@@ -43,34 +45,36 @@ mkdir ~/Videos/
 #mkdir ~/.config/sway/
 echo "Installing i3..."
 sudo apt install i3
-mkdir ~/.config/i3/
+mkdir $XDG_CONFIG_HOME/i3
 
 #echo "Installing Waybar..."
 #sudo apt install waybar
 #mkdir ~/.config/waybar
 echo "Installing Polybar..."
 sudo apt install polybar
-mkdir ~/.config/polybar
+mkdir $XDG_CONFIG_HOME/polybar
 
 echo "Installing Rofi..."
 sudo apt install rofi
-mkdir ~/.config/rofi
+mkdir $XDG_CONFIG_HOME/rofi
 
 echo "Installing Alacritty..."
 sudo apt install alacritty
+mkdir $XDG_CONFIG_HOME/alacritty
 
 #echo "Installing PCManFM-qt..."
 #sudo apt install pcmanfm-qt
 echo "Installing PCManFM..."
 sudo apt install pcmanfm
+mkdir $XDG_CONFIG_HOME/pcmanfm
 
 echo "Installing Falkon..."
 sudo apt install falkon
-mkdir ~/.config/falkon
+mkdir $XDG_CONFIG_HOME/falkon
 
 echo "Installing Bluefish..."
 sudo apt install bluefish
-mkdir ~/.config/bluefish
+mkdir $XDG_CONFIG_HOME/bluefish
 
 sudo git clone https://github.com/javalsai/lidm.git
 cd lidm
@@ -84,11 +88,15 @@ sudo systemctl enable lidm
 #wget <link to Koofr>
 
 # Copy configs
-echo "Copying X11 configs..."
-cp config.xorg ~/.xinitrc
 
-echo "Copying Sway configs..."
-cp config.sway ~/.config/i3/config
+echo "Copying Bash config..."
+cp bash.conf $HOME/.bash_profile
+
+echo "Copying X11 configs..."
+cp xorg.conf $XDG_CONFIG_HOME/.xinitrc
+
+echo "Copying i3 configs..."
+cp -r i3 $XDG_CONFIG_HOME/i3
 
 #echo "Copying Waybar configs..."
 #cp -r waybar ~/.config/waybar
