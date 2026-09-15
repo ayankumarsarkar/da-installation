@@ -3,6 +3,6 @@
 killall -q polybar
 
 # Launch Polybar
-polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
+polybar dil 2>&1 | tee -a /tmp/polybar.log & disown
 
 echo "Polybar launched..."
