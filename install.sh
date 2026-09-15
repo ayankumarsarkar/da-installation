@@ -32,8 +32,11 @@ fi
 unset confirm
 
 echo "Installing wget, gcc, and make temporarily..."
-sudo apt install wget gcc make libpam0g-dev xorg
-
+if check_installation_of lidm; then
+    sudo apt install wget gcc make xorg
+else
+    sudo apt install wget gcc make libpam0g-dev xorg
+fi
 # ask for $user if none found
 
 # switch to user space
@@ -54,7 +57,7 @@ if [[ "$confirm" != "n" && "$confirm" != "N" ]]; then
 fi
 
 echo "Configuring bash profile..."
-mv $HOME/.bashrc $HOME/Inbox/bashrc_original
+mv $HOME/.bash_profile $HOME/Inbox/bashrc_original
 cp bash.conf $HOME/.bash_profile
 source $HOME/.bash_profile
 echo " ...done."
@@ -63,6 +66,7 @@ echo " ...done."
 #echo "Installing Sway..."
 #sudo apt install sway
 #mkdir ~/.config/sway/
+echo "Checking installation of i3..."
 if check_installation_of i3; then
     echo "* Already installed."
 else
@@ -74,6 +78,7 @@ fi
 #echo "Installing Waybar..."
 #sudo apt install waybar
 #mkdir ~/.config/waybar
+echo "Checking installation of polybar..."
 if check_installation_of polybar; then
     echo "* Already installed."
 else
@@ -82,6 +87,7 @@ else
     mkdir $XDG_CONFIG_HOME/polybar
 fi
 
+echo "Checking installation of rofi..."
 if check_installation_of rofi; then
     echo "* Already installed."
 else
@@ -90,6 +96,7 @@ else
     mkdir $XDG_CONFIG_HOME/rofi
 fi
 
+echo "Checking installation of alacritty..."
 if check_installation_of alacritty; then
     echo "* Already installed."
 else
@@ -100,6 +107,7 @@ fi
 
 #echo "Installing PCManFM-qt..."
 #sudo apt install pcmanfm-qt
+echo "Checking installation of pcmanfm..."
 if check_installation_of pcmanfm; then
     echo "* Already installed."
 else
@@ -108,6 +116,7 @@ else
     mkdir $XDG_CONFIG_HOME/pcmanfm
 fi
 
+echo "Checking installation of falkon..."
 if check_installation_of falkon; then
     echo "* Already installed."
 else
@@ -116,6 +125,7 @@ else
     mkdir $XDG_CONFIG_HOME/falkon
 fi
 
+echo "Checking installation of bluefish..."
 if check_installation_of bluefish; then
     echo "* Already installed."
 else
@@ -124,6 +134,7 @@ else
     mkdir $XDG_CONFIG_HOME/bluefish
 fi
 
+echo "Checking installation of lidm..."
 if check_installation_of lidm; then
     echo "* Already installed."
 else
