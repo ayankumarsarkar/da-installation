@@ -102,7 +102,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f $XDG_CONFIG_HOME/bash/.bash_aliases ]; then
-  . $XDG_CONFIG_HOME/bash/.bash_aliases
+  . $XDG_CONFIG_HOME/bash/bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable

@@ -57,7 +57,7 @@ if [[ "$confirm" != "n" && "$confirm" != "N" ]]; then
 fi
 
 echo "Configuring bash profile..."
-mv $HOME/.bash_profile $HOME/Inbox/bashrc_original
+#mv $HOME/.bash_profile $HOME/Inbox/bashrc_original
 cp bash.conf $HOME/.bash_profile
 source $HOME/.bash_profile
 echo " ...done."
@@ -71,8 +71,8 @@ if check_installation_of i3; then
     echo "* Already installed."
 else
     echo "Installing i3..."
-    sudo apt install i3
     mkdir $XDG_CONFIG_HOME/i3
+    sudo apt install i3
 fi
 
 #echo "Installing Waybar..."
@@ -83,8 +83,8 @@ if check_installation_of polybar; then
     echo "* Already installed."
 else
     echo "Installing Polybar..."
-    sudo apt install polybar
     mkdir $XDG_CONFIG_HOME/polybar
+    sudo apt install polybar
 fi
 
 echo "Checking installation of rofi..."
@@ -92,8 +92,8 @@ if check_installation_of rofi; then
     echo "* Already installed."
 else
     echo "Installing Rofi..."
-    sudo apt install rofi
     mkdir $XDG_CONFIG_HOME/rofi
+    sudo apt install rofi
 fi
 
 echo "Checking installation of alacritty..."
@@ -101,8 +101,8 @@ if check_installation_of alacritty; then
     echo "* Already installed."
 else
     echo "Installing Alacritty..."
-    sudo apt install alacritty
     mkdir $XDG_CONFIG_HOME/alacritty
+    sudo apt install alacritty
 fi
 
 #echo "Installing PCManFM-qt..."
@@ -112,8 +112,8 @@ if check_installation_of pcmanfm; then
     echo "* Already installed."
 else
     echo "Installing PCManFM..."
-    sudo apt install pcmanfm
     mkdir $XDG_CONFIG_HOME/pcmanfm
+    sudo apt install pcmanfm
 fi
 
 echo "Checking installation of falkon..."
@@ -121,8 +121,8 @@ if check_installation_of falkon; then
     echo "* Already installed."
 else
     echo "Installing Falkon..."
-    sudo apt install falkon
     mkdir $XDG_CONFIG_HOME/falkon
+    sudo apt install falkon
 fi
 
 echo "Checking installation of bluefish..."
@@ -130,9 +130,19 @@ if check_installation_of bluefish; then
     echo "* Already installed."
 else
     echo "Installing Bluefish..."
-    sudo apt install bluefish
     mkdir $XDG_CONFIG_HOME/bluefish
+    sudo apt install bluefish
 fi
+
+echo "Checking installation of sqlitebrowser..."
+if check_installation_of sqlitebrowser; then
+    echo "* Already installed."
+else
+    echo "Installing sqlitebrowser..."
+    mkdir $XDG_CONFIG_HOME/sqlitebrowser
+    sudo apt install sqlitebrowser
+fi
+
 
 echo "Checking installation of lidm..."
 if check_installation_of lidm; then
@@ -151,25 +161,36 @@ else
     echo "...Done"
 fi
 
-#wget <link to TutaMail> 
+echo "Checking installation of tuta..."
+if check_installation_of tuta; then
+    echo "* Already installed."
+else
+    echo "Getting AppImage..."
+    wget https://app/tuta.com/desktop/tutanota-desktop-linux.AppImage
+    echo "Installing..."
+    mv tutanota-desktop-linux.AppImage $SYSTEM_BIN_HOME/tutanota-desktop-linux.AppImage
+    chmod u+x $SYSTEM_BIN_HOME/tutanota-desktop-linux.AppImage
+    echo ".. done"
+fi
+
 #wget <link to Koofr>
 
 # Copy configs
 
 echo "Copying Bash config..."
-cp -r bash $XDG_CONFIG_HOME/bash
+cp -r bash $XDG_CONFIG_HOME/
 
 echo "Copying X11 configs..."
 cp xorg.conf $XDG_CONFIG_HOME/.xinitrc
 
-echo "Copying i3 configs..."
-cp -r i3 $XDG_CONFIG_HOME/i3
+#echo "Copying i3 configs..."
+#cp -r i3 $XDG_CONFIG_HOME/
 
 #echo "Copying Waybar configs..."
 #cp -r waybar ~/.config/waybar
 #git clone https://github.com/prcxzm/polybar-themes
 #cp -r polybar-themes/simple $XDG_CONFIG_HOME/polybar
-cp -r polybar $XDG_CONFIG_HOME/polybar
+cp -r polybar $XDG_CONFIG_HOME/
 
 echo "Removing installation prerequisites..."
 sudo apt remove wget gcc make libpam0g-dev
