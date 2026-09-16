@@ -166,7 +166,7 @@ if check_installation_of tuta; then
     echo "* Already installed."
 else
     echo "Getting AppImage..."
-    wget https://app/tuta.com/desktop/tutanota-desktop-linux.AppImage
+    wget https://app.tuta.com/desktop/tutanota-desktop-linux.AppImage
     echo "Installing..."
     mv tutanota-desktop-linux.AppImage $SYSTEM_BIN_HOME/tutanota-desktop-linux.AppImage
     chmod u+x $SYSTEM_BIN_HOME/tutanota-desktop-linux.AppImage
