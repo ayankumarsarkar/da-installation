@@ -33,9 +33,9 @@ unset confirm
 
 echo "Installing wget, gcc, and make temporarily..."
 if check_installation_of lidm; then
-    sudo apt install wget gcc make xorg
+    sudo apt install wget gcc make xorg unzip
 else
-    sudo apt install wget gcc make libpam0g-dev xorg
+    sudo apt install wget gcc make libpam0g-dev xorg unzip
 fi
 # ask for $user if none found
 
