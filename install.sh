@@ -105,16 +105,23 @@ else
     sudo apt install alacritty
 fi
 
+# PCManFM-qt is part of core-lxqt so out of the equation
+# PCManFM was considered but its development seem to have
+# become stalled and its desktop does not work well with
+# i3 window manager. Hence, both of them are removed from
+# this Distribution or whatever it is I am building. This
+# block of text is in their sweet memory. Time to move on
+
 #echo "Installing PCManFM-qt..."
 #sudo apt install pcmanfm-qt
-echo "Checking installation of pcmanfm..."
-if check_installation_of pcmanfm; then
-    echo "* Already installed."
-else
-    echo "Installing PCManFM..."
-    mkdir $XDG_CONFIG_HOME/pcmanfm
-    sudo apt install pcmanfm
-fi
+#echo "Checking installation of pcmanfm..."
+#if check_installation_of pcmanfm; then
+#    echo "* Already installed."
+#else
+#    echo "Installing PCManFM..."
+#    mkdir $XDG_CONFIG_HOME/pcmanfm
+#    sudo apt install pcmanfm
+#fi This will be swiftly removed soon
 
 echo "Checking installation of falkon..."
 if check_installation_of falkon; then
@@ -123,7 +130,7 @@ else
     echo "Installing Falkon..."
     mkdir $XDG_CONFIG_HOME/falkon
     sudo apt install falkon
-fi
+fi # Falkon is giving me pain... a bit
 
 echo "Checking installation of bluefish..."
 if check_installation_of bluefish; then
