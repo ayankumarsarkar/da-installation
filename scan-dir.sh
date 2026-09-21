@@ -7,3 +7,5 @@
 # System/
 # System/
 # System/
+
+echo "$XDG_CONFIG_HOME"

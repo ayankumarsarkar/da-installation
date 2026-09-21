@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+res=$(rofi -dmenu < ~/.dmenu-i3exit)
+
+if [ $res = "logout" ]; then
+    i3-msg exit
+fi
+
+if [ $res = "restart" ]; then
+    reboot
+fi
+
+if [ $res = "shutdown" ]; then
+    poweroff
+fi
+
+exit 0
+
+# Source https://www.reddit.com/r/i3wm/comments/35nv3f/i3_exit_without_mouse_mode/

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 check_installation_of() {
     command -v "$1" &> /dev/null
 }
@@ -19,8 +18,8 @@ echo "Starting..."
 # use this if usermod did not work
 sudo usermod -aG input,video,plugdev $USER
 
-#echo "Setting up Bash..."
-#mkdir -p $HOME/System/bash
+echo "Setting up Bash..."
+mkdir -p $HOME/System/bash
 
 
 read -p "Do you want to install anything? (y/n): " confirm
@@ -123,6 +122,8 @@ fi
 #    sudo apt install pcmanfm
 #fi This will be swiftly removed soon
 
+# KeePassXC for Password Management
+
 echo "Checking installation of falkon..."
 if check_installation_of falkon; then
     echo "* Already installed."
@@ -139,7 +140,7 @@ else
     echo "Installing Bluefish..."
     mkdir $XDG_CONFIG_HOME/bluefish
     sudo apt install bluefish
-fi
+fi # I may replace bluefish with Zed unfortunately
 
 echo "Checking installation of sqlitebrowser..."
 if check_installation_of sqlitebrowser; then
@@ -178,9 +179,10 @@ else
     mv tutanota-desktop-linux.AppImage $SYSTEM_BIN_HOME/tutanota-desktop-linux.AppImage
     chmod u+x $SYSTEM_BIN_HOME/tutanota-desktop-linux.AppImage
     echo ".. done"
-fi
+fi # This has a bizare TLS1.5 Handshake error as does Chromium
 
 #wget <link to Koofr>
+# ^^^ It's installation is the most confusing of all.
 
 # Copy configs
 
