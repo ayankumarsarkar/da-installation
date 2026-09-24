@@ -9,6 +9,7 @@
 # System/
 
 echo "$XDG_CONFIG_HOME"
+#if [ -d ]
 echo "$XDG_CACHE_HOME"
 echo "$XDG_DATA_HOME"
 echo "$XDG_STATE_HOME"

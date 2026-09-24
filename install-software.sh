@@ -149,3 +149,7 @@ fi # This has a bizare TLS1.5 Handshake error as does Chromium
 
 #wget <link to Koofr>
 # ^^^ It's installation is the most confusing of all.
+
+sudo apt install --no-install-recommends lxqt-core lxqt-config lxqt-session lxqt-policykit
+
+sudo apt remove pcmanfm-qt lxqt-panel
