@@ -1,0 +1,2 @@
+setup-xorg-base
+apk add i3wm i3status dmenu alacritty
